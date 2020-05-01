@@ -19,13 +19,13 @@ class HomePageProvider with ChangeNotifier {
       if (res.code == 200) {
         print(res.data);
         model = HomeModel.fromJson(res.data);
-        print(model.toJson());
+        // print(model.toJson());
       }
       notifyListeners();
     }).catchError((error) {
-      print(error);
+      print('error >>>>> $error');
       isError = true;
-      errorMsg = error.msg;
+      errorMsg = error;
       isLoading = false;
       notifyListeners();
     });

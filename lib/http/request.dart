@@ -34,7 +34,7 @@ class NetRequest {
       else if (e.type == DioErrorType.RECEIVE_TIMEOUT)
         message = 'Receive TimeOut';
       else if (e.type == DioErrorType.RESPONSE)
-        message = '404 server not found ${e.response.statusCode}';
+        message = 'server not found ${e.response.statusCode}';
 
       return Future.error(message);
     }
