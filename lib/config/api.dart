@@ -1,7 +1,7 @@
 class JdApi {
   static const String BASE_URL = 'http://192.168.0.113:5001/api';
   // 首页请求的json数据
-  static const String HOME_PAGE = BASE_URL + '/profile/homepage';
+  static const String HOME_PAGE = BASE_URL + '/profiles/homepage';
   // 分类页的导航
   static const String CATEGORY_NAV = BASE_URL + '/profiles/navigationLeft';
   // 分类页的商品类目的json数据
