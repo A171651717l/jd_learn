@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jd_learn/store/navigation_bar.dart';
+import 'package:jd_learn/provider/navigation_bar.dart';
 import 'package:provider/provider.dart';
 
 import 'package:jd_learn/pages/home.dart';
@@ -42,8 +42,8 @@ class _IndexPageState extends State<IndexPage> {
                   index: mProviderr.bottomNavIndex,
                   children: <Widget>[
                     HomePage(),
-                    CartPage(),
                     CategoryPage(),
+                    CartPage(),
                     UserPage(),
                   ],
                 )));
