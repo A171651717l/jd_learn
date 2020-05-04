@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:jd_learn/provider/cart.dart';
+import 'package:provider/provider.dart';
 
 class CartPage extends StatefulWidget {
   CartPage({Key key}) : super(key: key);
@@ -10,11 +12,11 @@ class CartPage extends StatefulWidget {
 class _CartPageState extends State<CartPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('cart')
-      ),
-      body: Container(),
-    );
+    return Consumer<CartProvider>(builder: (_, provider, __) {
+      return Scaffold(
+        appBar: AppBar(title: Text('购物车')),
+        body: Container(),
+      );
+    });
   }
 }

@@ -10,6 +10,7 @@ class CategoryPageProvider with ChangeNotifier {
   String errorMsg = "";
   List<String> categoryNavList = [];
   List<CategoryContentModel> categoryContentList = [];
+  int tabIndex = 0;
 
   // 分类左侧
   loadCategoryNavData() {
@@ -23,6 +24,7 @@ class CategoryPageProvider with ChangeNotifier {
         for (var i = 0; i < res.data.length; i++) {
           categoryNavList.add(res.data[i]);
         }
+        loadCategoryContentData(tabIndex);
       }
       notifyListeners();
     }).catchError((error) {
@@ -36,23 +38,23 @@ class CategoryPageProvider with ChangeNotifier {
 
   // 分类右侧
   loadCategoryContentData(int index) {
+    tabIndex = index;
     isLoading = true;
-    isError = false;
-    errorMsg = "";
+    // isError = false;
+    // errorMsg = "";
     categoryContentList.clear();
-    notifyListeners();
 
     var data = {'title': categoryNavList[index]};
     NetRequest()
         .requestData(JdApi.CATEGORY_CONTENT, data: data, method: 'post')
         .then((res) {
       isLoading = false;
-      // if (res.data is List) {
-      //   for (var i = 0; i < res.data.length; i++) {
-      //     categoryNavList.add(res.data[i]);
-      //   }
-      // }
-      print(res.data);
+      if (res.data is List) {
+        for (var item in res.data) {
+          CategoryContentModel tmpModel = CategoryContentModel.fromJson(item);
+          categoryContentList.add(tmpModel);
+        }
+      }
       notifyListeners();
     }).catchError((error) {
       print('error >>>>> $error');
@@ -61,5 +63,7 @@ class CategoryPageProvider with ChangeNotifier {
       isLoading = false;
       notifyListeners();
     });
+
+    notifyListeners();
   }
 }

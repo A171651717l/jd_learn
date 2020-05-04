@@ -24,10 +24,10 @@ class _HomePageState extends State<HomePage> {
         },
         child: Scaffold(
           appBar: AppBar(
-            title: Text('homePage'),
+            title: Text('首页'),
           ),
           body: Container(
-            color: Colors.grey[300],
+            color: Colors.grey[200],
             child: Consumer<HomePageProvider>(builder: (_, provider, __) {
               // print(provider.isLoading);
               // 加载动画
