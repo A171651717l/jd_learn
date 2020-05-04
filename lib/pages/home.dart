@@ -29,7 +29,6 @@ class _HomePageState extends State<HomePage> {
           body: Container(
             color: Colors.grey[200],
             child: Consumer<HomePageProvider>(builder: (_, provider, __) {
-              // print(provider.isLoading);
               // 加载动画
               if (provider.isLoading) {
                 return Center(child: CupertinoActivityIndicator());

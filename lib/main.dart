@@ -11,6 +11,7 @@ void main() => runApp(MultiProvider(providers: [
       ),
       ChangeNotifierProvider<CartProvider>(create: (context) {
         CartProvider provider = new CartProvider();
+        provider.getCartList();
         return provider;
       })
     ], child: MyApp()));
