@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:jd_learn/model/bituan_test.dart';
 
 import 'package:jd_learn/model/home_model.dart';
 import 'package:jd_learn/provider/home.dart';
