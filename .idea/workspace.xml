@@ -7,12 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e61317d2-7ff3-4937-86bc-b99598b50f06" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/model/product_info.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/pages/product_details.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/provider/product_details.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/model/category_content_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/model/category_content_model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/category.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/category.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/provider/category.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/provider/category.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
