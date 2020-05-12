@@ -1,10 +1,7 @@
-import 'dart:convert';
-
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:jd_learn/config/api.dart';
 import 'package:jd_learn/http/request.dart';
-import 'package:jd_learn/http/githubDio.dart';
 import 'package:jd_learn/model/bituan_test.dart';
 import 'package:jd_learn/model/home_model.dart';
 
@@ -36,7 +33,6 @@ class HomePageProvider with ChangeNotifier {
       notifyListeners();
     });
 
-
     // HttpRequest().dio.get('http://wapi.ipfz.tv:81/v1/symbolConfig/findAll').then((res) {
     //   isLoading = false;
     //   bituanModel = BituanModel.fromJson(json.decode(res.data));
@@ -48,6 +44,5 @@ class HomePageProvider with ChangeNotifier {
     //   isLoading = false;
     //   notifyListeners();
     // });
-
   }
 }
