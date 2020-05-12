@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>button</button>
+  <script>
+    const btn = document.getElementsByTagName('button')[0];
+    const main = document.getElementsByTagName('body')[0];
+    btn.onclick = () => {
+      Toaster.postMessage('js调用flutter')
+    };
+
+    function flutterAlert(msg) {
+      
+    }
+  </script>
+</body>
+</html>

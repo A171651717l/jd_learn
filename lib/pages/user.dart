@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jd_learn/pages/webview.dart';
 
 class UserPage extends StatefulWidget {
   UserPage({Key key}) : super(key: key);
@@ -319,6 +320,10 @@ class _UserPageState extends State<UserPage> {
   }
 
   Container buildHeaderContainer() {
+    bool flag = true;
+    void _toggleFavorite() {}
+    ;
+
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
@@ -446,8 +451,18 @@ class _UserPageState extends State<UserPage> {
                   style: TextStyle(color: Colors.yellow, fontSize: 16.0),
                 ),
                 Spacer(),
-                Text("立即查看",
-                    style: TextStyle(color: Colors.yellow, fontSize: 16.0)),
+                InkWell(
+                  child: Text("立即查看",
+                      style: TextStyle(color: Colors.yellow, fontSize: 16.0)),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      new MaterialPageRoute(
+                        builder: (context) => new WebViewExample(),
+                      ),
+                    );
+                  },
+                ),
                 Icon(
                   Icons.chevron_right,
                   color: Colors.yellow,

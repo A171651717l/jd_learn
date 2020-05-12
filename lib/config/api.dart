@@ -1,7 +1,7 @@
 class JdApi {
   // static const String BASE_URL = 'http://192.168.0.113:5001/api';
-  // static const String BASE_URL = 'http://192.168.50.28:5001/api';
-  static const String BASE_URL = 'https://flutter-jdapi.herokuapp.com/api';
+  static const String BASE_URL = 'http://192.168.50.28:5001/api';
+  // static const String BASE_URL = 'https://flutter-jdapi.herokuapp.com/api';
   // 首页请求的json数据
   static const String HOME_PAGE = BASE_URL + '/profiles/homepage';
   // 分类页的导航

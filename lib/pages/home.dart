@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
-import 'package:jd_learn/model/bituan_test.dart';
 
 import 'package:jd_learn/model/home_model.dart';
 import 'package:jd_learn/provider/home.dart';
 import 'package:provider/provider.dart';
+
+import 'websocket.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
@@ -122,23 +123,33 @@ class _HomePageState extends State<HomePage> {
   }
 
   // 掌上秒杀头部
-  Container buildHeaderContainer() {
-    return Container(
-      margin: const EdgeInsets.only(top: 10.0),
-      padding: const EdgeInsets.all(10.0),
-      color: Colors.white,
-      height: 50,
-      child: Row(
-        children: <Widget>[
-          Image.asset("lib/assets/image/bej.png", width: 90, height: 20),
-          Spacer(),
-          Text("更多秒杀"),
-          Icon(
-            CupertinoIcons.right_chevron,
-            size: 14,
-          )
-        ],
+  Widget buildHeaderContainer() {
+    return InkWell(
+      child: Container(
+        margin: const EdgeInsets.only(top: 10.0),
+        padding: const EdgeInsets.all(10.0),
+        color: Colors.white,
+        height: 50,
+        child: Row(
+          children: <Widget>[
+            Image.asset("lib/assets/image/bej.png", width: 90, height: 20),
+            Spacer(),
+            Text("更多秒杀"),
+            Icon(
+              CupertinoIcons.right_chevron,
+              size: 14,
+            )
+          ],
+        ),
       ),
+      onTap: () {
+        Navigator.push(
+          context,
+          new MaterialPageRoute(
+            builder: (context) => new WebsocketTest(),
+          ),
+        );
+      },
     );
   }
 
