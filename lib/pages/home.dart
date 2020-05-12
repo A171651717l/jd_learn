@@ -1,6 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:connectivity/connectivity.dart';
 
 import 'package:jd_learn/model/home_model.dart';
 import 'package:jd_learn/provider/home.dart';
@@ -16,6 +19,26 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  StreamSubscription<ConnectivityResult> subscription;
+  ConnectivityResult connectivityResult;
+
+  void getConnectivityResult() async {
+    var connectivityResult = await Connectivity().checkConnectivity();
+    print('connectivityResult is $connectivityResult');
+  }
+
+  @override
+  void initState() {
+    getConnectivityResult();
+    subscription = Connectivity()
+        .onConnectivityChanged
+        .listen((ConnectivityResult result) {
+      connectivityResult = result;
+      // print(result);
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<HomePageProvider>(
@@ -37,7 +60,9 @@ class _HomePageState extends State<HomePage> {
               }
 
               // 捕获异常
-              if (provider.isError) {
+              if (provider.isError ||
+                  connectivityResult == ConnectivityResult.none) {
+                print('connectivityResult is $connectivityResult');
                 return Center(
                     child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -193,5 +218,11 @@ class _HomePageState extends State<HomePage> {
 
     return Container(
         margin: const EdgeInsets.only(top: 10.0), child: Row(children: list));
+  }
+
+  dispose() {
+    super.dispose();
+
+    subscription.cancel();
   }
 }

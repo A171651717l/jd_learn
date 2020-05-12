@@ -40,6 +40,7 @@ class _WebsocketTestState extends State<WebsocketTest> {
               StreamBuilder(
                 stream: channel.stream,
                 builder: (context, snapshot) {
+                  print(snapshot);
                   count++;
                   if (snapshot.hasError) {
                     _text = "network error";
